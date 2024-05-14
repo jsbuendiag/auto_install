@@ -60,6 +60,10 @@ echo "Installing pip3"
 sudo apt -y install python3-pip
 echo "Done!"
 
+echo "Installing pipx"
+sudo apt -y install pipx
+echo "Done!"
+
 echo "Installing prips"
 sudo apt -y install prips
 echo "Done!"
@@ -97,7 +101,7 @@ echo "Installing subdomainzer"
 cd $HOME/tools
 git clone https://github.com/nsonaniya2010/SubDomainizer.git
 cd SubDomainizer
-pip3 install --break-system-packages -r requirements.txt 
+pipx install requirements.txt 
 sudo cp SubDomainizer.py /usr/bin/
 echo "Done!"
 
@@ -111,7 +115,7 @@ sudo cp DNScewl /usr/bin
 echo "Done!"
 
 # Installing altdns
-pip3 install --break-system-packages py-altdns==1.0.2
+pipx install py-altdns==1.0.2
 echo "Done!"
 
 
@@ -120,13 +124,13 @@ echo "Installing cloudflare origin ip"
 cd $HOME/tools
 git clone https://github.com/gwen001/cloudflare-origin-ip
 cd cloudflare-origin-ip
-pip3 install -r --break-system-packages requirements.txt
+pipx install requirements.txt
 sudo cp cloudflare-origin-ip.py /usr/bin
 echo "Done!"
 
 # Installig waymore
 echo "Installing waymore"
-pip3 install --break-system-packages waymore
+pipx install waymore
 echo "Done!"
 
 install_go () {
@@ -280,6 +284,7 @@ echo "*************************************************************"
 echo "TOOLS INSTALLED:"
 
 for tool in "${!tools_to_install[@]}"; do
+    echo "$tool"
     command -v "$tool"
     if command -v "$tool" >/dev/null 2>&1; then   
         echo "[X] $tool installed"
