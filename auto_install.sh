@@ -101,7 +101,7 @@ echo "Installing subdomainzer"
 cd $HOME/tools
 git clone https://github.com/nsonaniya2010/SubDomainizer.git
 cd SubDomainizer
-pipx install requirements.txt 
+pip3 install -r requirements.txt 
 sudo cp SubDomainizer.py /usr/bin/
 echo "Done!"
 
@@ -124,7 +124,7 @@ echo "Installing cloudflare origin ip"
 cd $HOME/tools
 git clone https://github.com/gwen001/cloudflare-origin-ip
 cd cloudflare-origin-ip
-pipx install requirements.txt
+pip3 install -r requirements.txt
 sudo cp cloudflare-origin-ip.py /usr/bin
 echo "Done!"
 
@@ -166,124 +166,124 @@ mv $HOME/tools/brutespray/brutespray/main $HOME/tools/brutespray/brutespray/brut
 sudo cp $HOME/tools/brutespray/brutespray/brutespray $HOME/go/bin
 echo "Done!"
 
-# # Installing amass
-# echo "Installing amass."
-# go install -v github.com/owasp-amass/amass/v4/...@master
-# echo "Done!"
+# Installing amass
+echo "Installing amass."
+go install -v github.com/owasp-amass/amass/v4/...@master
+echo "Done!"
 
-# # Intalling all tools from project discovery
-# echo "Installing the package manager from project discovery"
-# go install -v github.com/projectdiscovery/pdtm/cmd/pdtm@latest
-# echo "Installing all Project Discovery tools"
-# pdtm -ia
-# nuclei
-# echo "Done!"
+# Intalling all tools from project discovery
+echo "Installing the package manager from project discovery"
+go install -v github.com/projectdiscovery/pdtm/cmd/pdtm@latest
+echo "Installing all Project Discovery tools"
+pdtm -ia
+nuclei
+echo "Done!"
 
-# # Installing metabigor
-# git clone https://github.com/j3ssie/metabigor.git "$HOME/tools/metabigor"
-# cd $HOME/tools/metabigor
-# go install
-# echo "Done!"
+# Installing metabigor
+git clone https://github.com/j3ssie/metabigor.git "$HOME/tools/metabigor"
+cd $HOME/tools/metabigor
+go install
+echo "Done!"
 
-# # Installing go install github.com/hakluke/hakrevdns@latest and hakrawler
-# echo "Installing hakrevdns and hakrawler"
-# go install github.com/hakluke/hakrevdns@latest
-# go install github.com/hakluke/hakrawler@latest
-# echo "Done!"
+# Installing go install github.com/hakluke/hakrevdns@latest and hakrawler
+echo "Installing hakrevdns and hakrawler"
+go install github.com/hakluke/hakrevdns@latest
+go install github.com/hakluke/hakrawler@latest
+echo "Done!"
 
-# # Installing gospider
-# echo "Installing gospider"
-# GO111MODULE=on go install github.com/jaeles-project/gospider@latest
-# echo "Done!"
+# Installing gospider
+echo "Installing gospider"
+GO111MODULE=on go install github.com/jaeles-project/gospider@latest
+echo "Done!"
 
-# # Installing getJS
-# echo "Installing getJS"
-# go install github.com/003random/getJS@latest
-# echo "Done!"
+# Installing getJS
+echo "Installing getJS"
+go install github.com/003random/getJS@latest
+echo "Done!"
 
-# #Installing golinkfinder
-# echo "Installing golinkfinder"
-# go install github.com/0xsha/GoLinkFinder@latest
-# echo "Done!"
+#Installing golinkfinder
+echo "Installing golinkfinder"
+go install github.com/0xsha/GoLinkFinder@latest
+echo "Done!"
 
-# # Installing github subdomain
-# echo "Installing github-subdomain"
-# go install github.com/gwen001/github-subdomains@latest
-# echo "Done!"
+# Installing github subdomain
+echo "Installing github-subdomain"
+go install github.com/gwen001/github-subdomains@latest
+echo "Done!"
 
-# # Installig shosubgo
-# echo "Installing shosubgo"
-# go install github.com/incogbyte/shosubgo@latest
-# echo "Done!"
+# Installig shosubgo
+echo "Installing shosubgo"
+go install github.com/incogbyte/shosubgo@latest
+echo "Done!"
 
-# # Installing gotator
-# echo "Installing gotator"
-# go install github.com/Josue87/gotator@latest
-# echo "Done!"
+# Installing gotator
+echo "Installing gotator"
+go install github.com/Josue87/gotator@latest
+echo "Done!"
 
-# # Installing github-endpoints
-# echo "Installing github endpoints"
-# go install github.com/gwen001/github-endpoints@latest
-# echo "Done!"
+# Installing github-endpoints
+echo "Installing github endpoints"
+go install github.com/gwen001/github-endpoints@latest
+echo "Done!"
 
-# # Installing gowitness
-# echo "Installing gowitness"
-# go install github.com/sensepost/gowitness@latest
-# echo "Done!"
+# Installing gowitness
+echo "Installing gowitness"
+go install github.com/sensepost/gowitness@latest
+echo "Done!"
 
-# # Installing subzy
-# echo "Installing subzy"
-# go install -v github.com/LukaSikic/subzy@latest
-# echo "Done!"
+# Installing subzy
+echo "Installing subzy"
+go install -v github.com/LukaSikic/subzy@latest
+echo "Done!"
 
-# # Installing ffuf
-# echo "Installing ffuf"
-# go install github.com/ffuf/ffuf/v2@latest
-# echo "Done!"
+# Installing ffuf
+echo "Installing ffuf"
+go install github.com/ffuf/ffuf/v2@latest
+echo "Done!"
 
-# # Installing gau
-# echo "Installing gau"
-# go install github.com/lc/gau/v2/cmd/gau@latest
-# echo "Done!"
+# Installing gau
+echo "Installing gau"
+go install github.com/lc/gau/v2/cmd/gau@latest
+echo "Done!"
 
-# # Installing unfurl
-# echo "Installing unfurl"
-# go install github.com/tomnomnom/unfurl@latest
-# echo "Done!"
+# Installing unfurl
+echo "Installing unfurl"
+go install github.com/tomnomnom/unfurl@latest
+echo "Done!"
 
-# # Installing anew
-# echo "Installing anew"
-# go install -v github.com/tomnomnom/anew@latest
-# echo "Done!"
+# Installing anew
+echo "Installing anew"
+go install -v github.com/tomnomnom/anew@latest
+echo "Done!"
 
-# # Installing wordlists
+# Installing wordlists
 
-# # Downloading assetnote wordlist
-# echo "Downloading assetnote wordlist"
-# cd $HOME/tools
-# mkdir assetnote
-# cd assetnote
-# wget -r --no-parent -R "index.html*" https://wordlists-cdn.assetnote.io/data/ -nH -e robots=off
-# echo "Done!"
+# Downloading assetnote wordlist
+echo "Downloading assetnote wordlist"
+cd $HOME/tools
+mkdir assetnote
+cd assetnote
+wget -r --no-parent -R "index.html*" https://wordlists-cdn.assetnote.io/data/ -nH -e robots=off
+echo "Done!"
 
-# # Downloading seclists
-# echo "Downloading seclist"
-# cd $HOME/tools
-# wget -c https://github.com/danielmiessler/SecLists/archive/master.zip -O SecList.zip \
-#   && unzip SecList.zip \
-#   && rm -f SecList.zip
-# echo "Done!"
+# Downloading seclists
+echo "Downloading seclist"
+cd $HOME/tools
+wget -c https://github.com/danielmiessler/SecLists/archive/master.zip -O SecList.zip \
+  && unzip SecList.zip \
+  && rm -f SecList.zip
+echo "Done!"
 
-# # Downloading jhaddix all dns
-# echo "Downloading jhaddix all dns list"
-# wget https://gist.githubusercontent.com/jhaddix/86a06c5dc309d08580a018c66354a056/raw/96f4e51d96b2203f19f6381c8c545b278eaa0837/all.txt
-# echo "Done!"
+# Downloading jhaddix all dns
+echo "Downloading jhaddix all dns list"
+wget https://gist.githubusercontent.com/jhaddix/86a06c5dc309d08580a018c66354a056/raw/96f4e51d96b2203f19f6381c8c545b278eaa0837/all.txt
+echo "Done!"
 
 echo "Installation completed of all software!!!!!!"
 echo "*************************************************************"
 echo "TOOLS INSTALLED:"
 
-for tool in "${!tools_to_install[@]}"; do
+for tool in "${tools_to_install[@]}"; do
     echo "$tool"
     command -v "$tool"
     if command -v "$tool" >/dev/null 2>&1; then   
