@@ -5,9 +5,11 @@ I am not an expert in bash, so many things might go wrong and may have a better 
 
 ### Usage
 First give the appropiate privileges to the file:
-
-`chmod +x auto_install.sh`
+```
+chmod +x auto_install.sh
+```
 
 Then just execute the program:
-
-`sudo -u <your sudoer user> -E ./auto_install.sh`
+```
+sudo -u <your sudoer user> -E ./auto_install.sh
+```

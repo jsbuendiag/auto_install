@@ -47,6 +47,8 @@ sudo apt-get -y upgrade
 echo "Done!"
 
 # sudo rm /usr/lib/python3.$(python3 -V | cut -d ' ' -f2 | cut -d '.' -f2)/EXTERNALLY-MANAGED
+echo "Installing gcc"
+sudo apt -y install gcc
 
 echo "Installing ruby"
 sudo apt -y install ruby
@@ -156,16 +158,6 @@ else
     install_go
 fi
 
-# Installing brutespray
-echo "Installing brutespray"
-cd $HOME/tools
-git clone https://github.com/x90skysn3k/brutespray.git
-cd brutespray
-go build -o brutespray main.go
-mv $HOME/tools/brutespray/brutespray/main $HOME/tools/brutespray/brutespray/brutespray
-sudo cp $HOME/tools/brutespray/brutespray/brutespray $HOME/go/bin
-echo "Done!"
-
 # Installing amass
 echo "Installing amass."
 go install -v github.com/owasp-amass/amass/v4/...@master
@@ -179,16 +171,27 @@ pdtm -ia
 nuclei
 echo "Done!"
 
+# Installing brutespray
+echo "Installing brutespray"
+cd $HOME/tools
+git clone https://github.com/x90skysn3k/brutespray.git
+cd brutespray
+go build -o brutespray main.go
+mv $HOME/tools/brutespray/brutespray/main $HOME/tools/brutespray/brutespray/brutespray
+sudo cp $HOME/tools/brutespray/brutespray/brutespray $HOME/go/bin/brutespray
+echo "Done!"
+
 # Installing metabigor
 git clone https://github.com/j3ssie/metabigor.git "$HOME/tools/metabigor"
 cd $HOME/tools/metabigor
 go install
 echo "Done!"
 
-# Installing go install github.com/hakluke/hakrevdns@latest and hakrawler
-echo "Installing hakrevdns and hakrawler"
+# Installing hakrevdns, hakrawler and hakip2host
+echo "Installing hakrevdns, hakrawler, and hakip2host"
 go install github.com/hakluke/hakrevdns@latest
 go install github.com/hakluke/hakrawler@latest
+go install github.com/hakluke/hakip2host@latest
 echo "Done!"
 
 # Installing gospider
@@ -241,6 +244,11 @@ echo "Installing ffuf"
 go install github.com/ffuf/ffuf/v2@latest
 echo "Done!"
 
+# Installing cloudrecon
+echo "Installing CloudRecon"
+go install github.com/g0ldencybersec/CloudRecon@latest
+echo "Done!"
+
 # Installing gau
 echo "Installing gau"
 go install github.com/lc/gau/v2/cmd/gau@latest
@@ -276,6 +284,7 @@ echo "Done!"
 
 # Downloading jhaddix all dns
 echo "Downloading jhaddix all dns list"
+cd $HOME/tools
 wget https://gist.githubusercontent.com/jhaddix/86a06c5dc309d08580a018c66354a056/raw/96f4e51d96b2203f19f6381c8c545b278eaa0837/all.txt
 echo "Done!"
 
@@ -299,6 +308,7 @@ echo "Check your $HOME/tools folder for non-go tools"
 echo "Check your $HOME/go/bin folder for go tools"
 echo "Remember to set sources file for subfinder and amass"
 echo "Remember to set token for good scans in wpscan"
+echo "Remember you can get a 2 weeks old database if you are unable to launch a VPS for CloudREcon in: https://kaeferjaeger.gay/?dir=sni-ip-ranges"
 echo "Set environment variables for cloud-origin-ip of Censys: CENSYS_UID and CENSYS_SECRET and SecurityTrails: SECURITY_TRAILS_API_KEY"
 echo "Github tools will ask you for your token"
 echo "Get to hack!!!"
