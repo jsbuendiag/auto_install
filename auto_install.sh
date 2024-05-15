@@ -312,3 +312,14 @@ echo "Remember you can get a 2 weeks old database if you are unable to launch a 
 echo "Set environment variables for cloud-origin-ip of Censys: CENSYS_UID and CENSYS_SECRET and SecurityTrails: SECURITY_TRAILS_API_KEY"
 echo "Github tools will ask you for your token"
 echo "Get to hack!!!"
+
+
+## to install karma v2
+# git clone https://github.com/Dheerajmadhukar/karma_v2.git
+# python3 -m pip install shodan mmh3
+# apt install jq -y
+# go install github.com/tomnomnom/httprobe@latest
+# git clone https://github.com/codingo/Interlace.git
+# python3 setup.py install --user
+# sudo apt -y install lolcat
+# go install -v github.com/tomnomnom/anew@latest
