@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-tools_to_install=('ruby' 'gem' 'pip3' 'prips' 'libpcap-dev' 'nmap' 'go' 'amass' 'massdns' 'pdtm' 'metabigor' 'gospider' 'SubDomainizer' 'getJS' 'GoLinkFinder' 'github-subdomains' 'shosubgo' 'gotator' 'DNScewl' 'altdns' 'brutespray' 'github-endpoints' 'cloudflare-origin-ip' 'gowitness' 'subzy' 'ffuf' 'waymore' 'gau' 'unfurl' 'anew' 'wpscan' 'sqlmap')
+tools_to_install=('ruby' 'gem' 'pip3' 'prips' 'libpcap-dev' 'nmap' 'go' 'amass' 'massdns' 'pdtm' 'metabigor' 'gospider' 'SubDomainizer' 'getJS' 'GoLinkFinder' 'github-subdomains' 'shosubgo' 'gotator' 'DNScewl' 'altdns' 'brutespray' 'github-endpoints' 'cloudflare-origin-ip' 'gowitness' 'subzy' 'ffuf' 'waymore' 'gau' 'unfurl' 'anew' 'wpscan' 'sqlmap' 'xnLinkFinder' 'CloudRecon' 'hakip2host')
 
 confirm () {
     while true; do
@@ -134,6 +134,9 @@ echo "Done!"
 echo "Installing waymore"
 pipx install waymore
 echo "Done!"
+
+# Installing xnLinkFinder
+echo "Installing xnLinkFinder"
 
 install_go () {
     wget https://go.dev/dl/go1.22.3.linux-amd64.tar.gz
@@ -308,13 +311,13 @@ echo "Check your $HOME/tools folder for non-go tools"
 echo "Check your $HOME/go/bin folder for go tools"
 echo "Remember to set sources file for subfinder and amass"
 echo "Remember to set token for good scans in wpscan"
-echo "Remember you can get a 2 weeks old database if you are unable to launch a VPS for CloudREcon in: https://kaeferjaeger.gay/?dir=sni-ip-ranges"
+echo "Remember you can get a 2 weeks old database if you are unable to launch a VPS for CloudRecon in: https://kaeferjaeger.gay/?dir=sni-ip-ranges"
 echo "Set environment variables for cloud-origin-ip of Censys: CENSYS_UID and CENSYS_SECRET and SecurityTrails: SECURITY_TRAILS_API_KEY"
 echo "Github tools will ask you for your token"
 echo "Get to hack!!!"
 
 
-## to install karma v2
+#### to install karma v2 #####
 # git clone https://github.com/Dheerajmadhukar/karma_v2.git
 # python3 -m pip install shodan mmh3
 # apt install jq -y
