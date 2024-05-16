@@ -273,6 +273,10 @@ echo "Done!"
 
 # Installing wordlists
 
+#Downloading resolvers latest
+
+wget -P $HOME/tools https://raw.githubusercontent.com/trickest/resolvers/main/resolvers.txt
+
 # Downloading assetnote wordlist
 echo "Downloading assetnote wordlist"
 cd $HOME/tools
@@ -287,6 +291,7 @@ cd $HOME/tools
 wget -c https://github.com/danielmiessler/SecLists/archive/master.zip -O SecList.zip \
   && unzip SecList.zip \
   && rm -f SecList.zip
+mv mv SecLists-master/ SecLists
 echo "Done!"
 
 # Downloading jhaddix all dns
