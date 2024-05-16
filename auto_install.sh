@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-tools_to_install=('ruby' 'gem' 'pip3' 'prips' 'libpcap-dev' 'nmap' 'go' 'amass' 'massdns' 'pdtm' 'metabigor' 'gospider' 'SubDomainizer' 'getJS' 'GoLinkFinder' 'github-subdomains' 'shosubgo' 'gotator' 'DNScewl' 'altdns' 'brutespray' 'github-endpoints' 'cloudflare-origin-ip' 'gowitness' 'subzy' 'ffuf' 'waymore' 'gau' 'unfurl' 'anew' 'wpscan' 'sqlmap' 'xnLinkFinder' 'CloudRecon' 'hakip2host')
+tools_to_install=('ruby' 'gem' 'pip3' 'prips' 'libpcap-dev' 'nmap' 'go' 'amass' 'massdns' 'pdtm' 'metabigor' 'gospider' 'SubDomainizer' 'getJS' 'GoLinkFinder' 'github-subdomains' 'shosubgo' 'gotator' 'DNScewl' 'altdns' 'brutespray' 'github-endpoints' 'cloudflare-origin-ip' 'gowitness' 'subzy' 'ffuf' 'waymore' 'gau' 'unfurl' 'anew' 'wpscan' 'sqlmap' 'xnLinkFinder' 'CloudRecon' 'hakip2host' 'dnsrecon')
 
 confirm () {
     while true; do
@@ -75,6 +75,10 @@ sudo apt install -y libpcap-dev
 
 echo "Installing nmap"
 sudo apt-get -y install nmap
+echo "Done!"
+
+echo "Installing dnsrecon"
+sudo apt -y install dnsrecon
 echo "Done!"
 
 # Installing wpscan
