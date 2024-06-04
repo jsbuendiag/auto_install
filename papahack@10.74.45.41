@@ -117,7 +117,7 @@ git clone https://github.com/aboul3la/Sublist3r.git
 cd Sublist3r/
 sed -i '' -e '1s/#!\/usr\/bin\/env python/#!\/usr\/bin\/env python3/' sublist3r.py
 pip3 install -r requirements.txt 
-sudo ln -s $HOME/tools/Sublist3r/sublist3r.py /usr/bin/sublist3r
+ln -s $HOME/tools/Sublist3r/sublist3r.py /usr/bin/sublist3r
 echo "Done!"
 
 # Installing DNSCewl   
