@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-tools_to_install=('ruby' 'gem' 'pip3' 'prips' 'libpcap-dev' 'nmap' 'go' 'amass' 'massdns' 'pdtm' 'metabigor' 'gospider' 'SubDomainizer' 'getJS' 'GoLinkFinder' 'github-subdomains' 'shosubgo' 'gotator' 'DNScewl' 'altdns' 'brutespray' 'github-endpoints' 'cloudflare-origin-ip' 'gowitness' 'subzy' 'ffuf' 'waymore' 'gau' 'unfurl' 'anew' 'wpscan' 'sqlmap' 'xnLinkFinder' 'CloudRecon' 'hakip2host' 'dnsrecon')
+tools_to_install=('ruby' 'gem' 'pip3' 'prips' 'libpcap-dev' 'nmap' 'go' 'amass' 'massdns' 'pdtm' 'metabigor' 'gospider' 'SubDomainizer' 'getJS' 'GoLinkFinder' 'github-subdomains' 'shosubgo' 'gotator' 'DNScewl' 'altdns' 'brutespray' 'github-endpoints' 'cloudflare-origin-ip' 'gowitness' 'subzy' 'ffuf' 'waymore' 'gau' 'unfurl' 'anew' 'wpscan' 'sqlmap' 'xnLinkFinder' 'CloudRecon' 'hakip2host' 'dnsrecon' 'shodan' 'assetfinder' 'sublist3r')
 
 confirm () {
     while true; do
@@ -46,7 +46,6 @@ sudo apt-get -y update
 sudo apt-get -y upgrade
 echo "Done!"
 
-# sudo rm /usr/lib/python3.$(python3 -V | cut -d ' ' -f2 | cut -d '.' -f2)/EXTERNALLY-MANAGED
 echo "Installing gcc"
 sudo apt -y install gcc
 
@@ -106,9 +105,21 @@ echo "Done!"
 echo "Installing subdomainzer"
 cd $HOME/tools
 git clone https://github.com/nsonaniya2010/SubDomainizer.git
+
 cd SubDomainizer
+cd Sublist3r/
 pip3 install -r requirements.txt 
-sudo cp SubDomainizer.py /usr/bin/
+sudo cp sublist3r.py /usr/bin/
+echo "Done!"
+
+# Installing Sublist3r
+echo "Installing Sublist3r"
+cd $HOME/tools
+git clone https://github.com/aboul3la/Sublist3r.git
+cd Sublist3r/
+sed -i '' -e '1s/#!\/usr\/bin\/env python/#!\/usr\/bin\/env python3/' sublist3r.py
+pip3 install -r requirements.txt 
+ln -s $HOME/tools/Sublist3r/sublist3r.py /usr/bin/sublist3r
 echo "Done!"
 
 # Installing DNSCewl   
@@ -121,7 +132,13 @@ sudo cp DNScewl /usr/bin
 echo "Done!"
 
 # Installing altdns
+echo "Installing altdns"
 pipx install py-altdns==1.0.2
+echo "Done!"
+
+# Installing Shodan cli
+echo "Installing shodan"
+pip3 install shodan
 echo "Done!"
 
 
@@ -264,6 +281,11 @@ echo "Done!"
 # Installing unfurl
 echo "Installing unfurl"
 go install github.com/tomnomnom/unfurl@latest
+echo "Done!"
+
+# Installing assetfinder   
+echo "Installing assetfinder"
+go install github.com/tomnomnom/assetfinder@latest
 echo "Done!"
 
 # Installing anew
