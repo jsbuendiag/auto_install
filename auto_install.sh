@@ -105,11 +105,9 @@ echo "Done!"
 echo "Installing subdomainzer"
 cd $HOME/tools
 git clone https://github.com/nsonaniya2010/SubDomainizer.git
-
 cd SubDomainizer
-cd Sublist3r/
 pip3 install -r requirements.txt 
-sudo cp sublist3r.py /usr/bin/
+sudo cp SubDomainizer.py /usr/bin/
 echo "Done!"
 
 # Installing Sublist3r
