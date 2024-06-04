@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-tools_to_install=('ruby' 'gem' 'pip3' 'prips' 'libpcap-dev' 'nmap' 'go' 'amass' 'massdns' 'pdtm' 'metabigor' 'gospider' 'SubDomainizer' 'getJS' 'GoLinkFinder' 'github-subdomains' 'shosubgo' 'gotator' 'DNScewl' 'altdns' 'brutespray' 'github-endpoints' 'cloudflare-origin-ip' 'gowitness' 'subzy' 'ffuf' 'waymore' 'gau' 'unfurl' 'anew' 'wpscan' 'sqlmap' 'xnLinkFinder' 'CloudRecon' 'hakip2host' 'dnsrecon' 'shodan' 'assetfinder' 'sublist3r')
+tools_to_install=('ruby' 'gem' 'pip3' 'prips' 'libpcap-dev' 'nmap' 'go' 'amass' 'massdns' 'pdtm' 'metabigor' 'gospider' 'SubDomainizer' 'getJS' 'GoLinkFinder' 'github-subdomains' 'shosubgo' 'gotator' 'DNScewl' 'altdns' 'brutespray' 'github-endpoints' 'cloudflare-origin-ip' 'gowitness' 'subzy' 'ffuf' 'waymore' 'gau' 'unfurl' 'anew' 'wpscan' 'sqlmap' 'xnLinkFinder' 'CloudRecon' 'hakip2host' 'dnsrecon' 'shodan' 'assetfinder' 'sublist3r' 'cloc' 'graudit' 'trufflehog')
 
 confirm () {
     while true; do
@@ -80,6 +80,10 @@ echo "Installing dnsrecon"
 sudo apt -y install dnsrecon
 echo "Done!"
 
+echo "Installing cloc"
+sudo apt -y install cloc
+echo "Done!"
+
 # Installing wpscan
 echo "Installing wpscan"
 sudo apt install curl git libcurl4-openssl-dev make zlib1g-dev gawk g++ gcc libreadline6-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 autoconf libgdbm-dev libncurses5-dev automake libtool bison pkg-config ruby ruby-bundler ruby-dev -y
@@ -99,6 +103,14 @@ git clone https://github.com/blechschmidt/massdns.git "$HOME/tools/massdns"
 cd $HOME/tools/massdns/
 make
 sudo cp $HOME/tools/massdns/bin/massdns /usr/bin/
+echo "Done!"
+
+# Installing graudit   
+echo "Installing graudit"
+cd $HOME/tools/
+git clone https://github.com/wireghoul/graudit
+cd $HOME/tools/graudit/
+sudo ln -s /home/papahack/tools/graudit/graudit /usr/bin/graudit
 echo "Done!"
 
 # Installing sudomainzer
@@ -191,6 +203,12 @@ go install -v github.com/projectdiscovery/pdtm/cmd/pdtm@latest
 echo "Installing all Project Discovery tools"
 pdtm -ia
 nuclei
+echo "Done!"
+
+# Installing trufflehog
+echo "Installing trufflehog"
+git clone https://github.com/trufflesecurity/trufflehog.git
+cd trufflehog; go install
 echo "Done!"
 
 # Installing brutespray
