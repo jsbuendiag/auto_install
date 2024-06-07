@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-tools_to_install=('ruby' 'gem' 'pip3' 'prips' 'libpcap-dev' 'nmap' 'go' 'amass' 'massdns' 'pdtm' 'metabigor' 'gospider' 'SubDomainizer' 'getJS' 'GoLinkFinder' 'github-subdomains' 'shosubgo' 'gotator' 'DNScewl' 'altdns' 'brutespray' 'github-endpoints' 'cloudflare-origin-ip' 'gowitness' 'subzy' 'ffuf' 'waymore' 'gau' 'unfurl' 'anew' 'wpscan' 'sqlmap' 'xnLinkFinder' 'CloudRecon' 'hakip2host' 'dnsrecon' 'shodan' 'assetfinder' 'sublist3r' 'cloc' 'graudit' 'trufflehog')
+tools_to_install=('ruby' 'gem' 'pip3' 'prips' 'libpcap-dev' 'nmap' 'go' 'amass' 'massdns' 'pdtm' 'metabigor' 'gospider' 'SubDomainizer' 'getJS' 'GoLinkFinder' 'github-subdomains' 'shosubgo' 'gotator' 'DNScewl' 'altdns' 'brutespray' 'github-endpoints' 'cloudflare-origin-ip' 'gowitness' 'subzy' 'ffuf' 'waymore' 'gau' 'unfurl' 'anew' 'wpscan' 'sqlmap' 'xnLinkFinder' 'CloudRecon' 'hakip2host' 'dnsrecon' 'shodan' 'assetfinder' 'sublist3r' 'cloc' 'graudit' 'trufflehog' 'driftwood' 'ghauri')
 
 confirm () {
     while true; do
@@ -166,8 +166,15 @@ echo "Installing waymore"
 pipx install waymore
 echo "Done!"
 
-# Installing xnLinkFinder
-echo "Installing xnLinkFinder"
+# Installing ghauri
+echo "Installing ghauri"
+cd $HOME/tools
+git clone https://github.com/r0oth3x49/ghauri.git
+cd ghauri
+python3 -m pip install --upgrade -r requirements.txt
+python3 -m pip install -e . 
+echo "Done!"
+
 
 install_go () {
     wget https://go.dev/dl/go1.22.3.linux-amd64.tar.gz
@@ -209,6 +216,11 @@ echo "Done!"
 echo "Installing trufflehog"
 git clone https://github.com/trufflesecurity/trufflehog.git
 cd trufflehog; go install
+echo "Done!"
+
+# Installing driftwood
+echo "Installing driftwood"
+go install github.com/trufflesecurity/driftwood@latest
 echo "Done!"
 
 # Installing brutespray
