@@ -321,6 +321,11 @@ echo "Installing anew"
 go install -v github.com/tomnomnom/anew@latest
 echo "Done!"
 
+# Installing bbscope
+echo "Installing bbscope"
+GO111MODULE=on go install github.com/sw33tLie/bbscope@latest
+echo "Done!"
+
 # Installing wordlists
 
 #Downloading resolvers latest
